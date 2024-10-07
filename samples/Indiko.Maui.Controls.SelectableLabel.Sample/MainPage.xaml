@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:vm="clr-namespace:Indiko.Maui.Controls.SelectableLabel.Sample.ViewModels"
+             xmlns:idk="clr-namespace:Indiko.Maui.Controls.SelectableLabel;assembly=Indiko.Maui.Controls.SelectableLabel"
+             x:Class="Indiko.Maui.Controls.SelectableLabel.Sample.MainPage"
+			 x:DataType="vm:MainPageViewModel"
+             BackgroundColor="White"
+             Title="Indiko.Maui.Controls.SelectableLabel.Sample">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Selectable Label Demo" FontSize="Header" TextColor="{StaticResource Primary}"></Label>
+
+            <idk:SelectableLabel
+                Text="This is a simple selectable label"
+                TextColor="{StaticResource Tertiary}"
+                FontSize="18"
+                FontAttributes="None"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                />
+
+
+
+            <idk:SelectableLabel
+                Text="Et sadipscing voluptua vulputate. Clita aliquyam stet consequat nostrud tation erat amet consetetur assum. Ipsum sanctus nulla stet minim at tempor veniam et dolor sadipscing velit dolores amet tempor et clita sit."
+                TextColor="{StaticResource Black}"
+                FontSize="12"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Center"
+                CharacterSpacing="0.1"
+                LineBreakMode="WordWrap"
+                />
+
+
+            <idk:SelectableLabel>
+                <idk:SelectableLabel.FormattedText>
+                    <FormattedString>
+                        <Span Text="Hello, " FontAttributes="Bold" TextColor="{StaticResource Yellow100Accent}"/>
+                        <Span Text="world!" FontAttributes="Italic" TextColor="{StaticResource Blue100Accent}" />
+                    </FormattedString>
+                </idk:SelectableLabel.FormattedText>
+                </idk:SelectableLabel>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

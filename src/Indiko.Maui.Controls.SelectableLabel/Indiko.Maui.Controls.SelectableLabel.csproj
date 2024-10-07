@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<!-- NuGet -->
+		<Authors>INDIKO</Authors>
+		<Copyright>Copyright © INDIKO and contributors</Copyright>
+		<IsPackable>True</IsPackable>
+		<PackageProjectUrl>https://github.com/0xc3u/Indiko.Maui.Controls.SelectableLabel</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/0xc3u/Indiko.Maui.Controls.SelectableLabel</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>dotnet-maui;maui;ui;selectable-label;control;</PackageTags>
+		<IncludeSymbols>True</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Title>INDIKO .NET MAUI SelectableLabel</Title>
+		<Description>The `SelectableLabel` control is a custom label for MAUI applications that provides selectable text capabilities with extensive customization options. This control supports various text properties and formatted text, making it versatile for creating rich, interactive labels in cross-platform apps.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<DebugType>portable</DebugType>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.91" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Indiko.Maui.Controls.SelectableLabel\icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
+	</ItemGroup>
+
+</Project>
