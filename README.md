@@ -12,7 +12,7 @@ The `SelectableLabel` control is a custom label for MAUI applications that provi
 
 You can install the `Indiko.Maui.Controls.SelectableLabel` package via NuGet Package Manager or CLI:
 
-[![NuGet](https://img.shields.io/nuget/v/Indiko.Maui.Controls.SelectableLabel.svg?label=NuGet)](https://www.nuget.org/packages/Indiko.Maui.Controls.selectable Label/)
+[![NuGet](https://img.shields.io/nuget/v/Indiko.Maui.Controls.SelectableLabel.svg?label=NuGet)](https://www.nuget.org/packages/Indiko.Maui.Controls.SelectableLabel/)
 
 ### NuGet Package Manager
 ```bash
