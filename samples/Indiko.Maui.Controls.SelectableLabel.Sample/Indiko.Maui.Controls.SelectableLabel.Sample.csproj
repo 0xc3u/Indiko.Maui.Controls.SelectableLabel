@@ -12,7 +12,7 @@
 		<ApplicationTitle>INDIKO .NET MAUI SelectableLabel Sample</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>ch.indiko.markdown.sample</ApplicationId>
+		<ApplicationId>ch.indiko.selectablelabel.sample</ApplicationId>
 		<ApplicationIdGuid>A20E30BB-3BF7-4ACB-89F2-596834136909</ApplicationIdGuid>
 
 		<!-- Versions -->
