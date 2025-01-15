@@ -7,6 +7,10 @@ using Indiko.Maui.Controls.SelectableLabel.Platforms.Android;
 using Indiko.Maui.Controls.SelectableLabel.Platforms.iOS;
 #endif
 
+#if MACCATALYST
+using Indiko.Maui.Controls.SelectableLabel.Platforms.MacCatalyst;
+#endif
+
 namespace Indiko.Maui.Controls.SelectableLabel;
 
 public static class BuilderExtension
