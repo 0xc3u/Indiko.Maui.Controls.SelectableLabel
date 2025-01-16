@@ -108,7 +108,7 @@ public static MauiApp CreateMauiApp()
 
 ## Platform-specific Implementations
 
-`SelectableLabel` uses platform-specific handlers to achieve cross-platform compatibility. On Android, it leverages `TextView` with selectable properties, while on iOS, `UITextView` provides similar functionality.
+`SelectableLabel` uses platform-specific handlers to achieve cross-platform compatibility. On Android, it leverages `TextView` with selectable properties, while on iOS and MacCatalyst, `UITextView` provides similar functionality.
 
 ## Contributing
 
