@@ -3,8 +3,8 @@ using System.Windows.Input;
 using Android.Graphics;
 using Android.Text.Style;
 using Android.Widget;
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Microsoft.Maui.Handlers;
+using Microsoft.Maui.Platform;
 using aGraphics = Android.Graphics;
 using aText = Android.Text;
 using aViews = Android.Views;
@@ -58,7 +58,7 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, TextView>
 
     public static void MapTextColor(SelectableLabelHandler handler, SelectableLabel label)
     {
-        handler.PlatformView.SetTextColor(label.TextColor.ToAndroid());
+        handler.PlatformView.SetTextColor(label.TextColor.ToPlatform());
     }
 
     public static void MapFontAttributes(SelectableLabelHandler handler, SelectableLabel label)
@@ -92,7 +92,7 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, TextView>
 
     public static void MapBackgroundColor(SelectableLabelHandler handler, SelectableLabel label)
     {
-        handler.PlatformView.SetBackgroundColor(label.BackgroundColor.ToAndroid());
+        handler.PlatformView.SetBackgroundColor(label.BackgroundColor.ToPlatform());
     }
 
     public static void MapLineBreakMode(SelectableLabelHandler handler, SelectableLabel label)
@@ -268,12 +268,12 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, TextView>
 
                 if (span.TextColor != null)
                 {
-                    spannableString.SetSpan(new ForegroundColorSpan(span.TextColor.ToAndroid()), start, end, aText.SpanTypes.InclusiveInclusive);
+                    spannableString.SetSpan(new ForegroundColorSpan(span.TextColor.ToPlatform()), start, end, aText.SpanTypes.InclusiveInclusive);
                 }
 
                 if (span.BackgroundColor != null)
                 {
-                    spannableString.SetSpan(new aText.Style.BackgroundColorSpan(span.BackgroundColor.ToAndroid()), start, end, aText.SpanTypes.InclusiveInclusive);
+                    spannableString.SetSpan(new aText.Style.BackgroundColorSpan(span.BackgroundColor.ToPlatform()), start, end, aText.SpanTypes.InclusiveInclusive);
                 }
 
                 if (span.TextDecorations.HasFlag(TextDecorations.Underline))
