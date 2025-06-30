@@ -44,7 +44,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.80" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.80" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -54,9 +55,5 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\src\Indiko.Maui.Controls.SelectableLabel\Indiko.Maui.Controls.SelectableLabel.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
 	</ItemGroup>
 </Project>
