@@ -1,12 +1,7 @@
-<Application
-    x:Class="Indiko.Maui.Controls.SelectableLabel.Sample.WinUI.App"
+﻿<maui:MauiWinUIApplication
+    x:Class="Indiko.Maui.Controls.SelectableLabel.Sample.Win.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
-</Application>
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui">
+
+</maui:MauiWinUIApplication>

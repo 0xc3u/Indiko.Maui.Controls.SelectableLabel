@@ -1,13 +1,13 @@
 using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
-using Microsoft.UI;
-using Microsoft.UI.Text;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Documents;
-using Microsoft.UI.Xaml.Media;
-using System.Text;
+using Windows.UI.Text;
+
+using TextDeco = Windows.UI.Text.TextDecorations;
 
 namespace Indiko.Maui.Controls.SelectableLabel.Platforms.Windows;
+
 
 public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock>
 {
@@ -19,7 +19,6 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
          [nameof(SelectableLabel.FontAttributes)] = MapFontAttributes,
          [nameof(SelectableLabel.FontSize)] = MapFontSize,
          [nameof(SelectableLabel.FontFamily)] = MapFontFamily,
-         [nameof(SelectableLabel.BackgroundColor)] = MapBackgroundColor,
          [nameof(SelectableLabel.LineBreakMode)] = MapLineBreakMode,
          [nameof(SelectableLabel.TextDecorations)] = MapTextDecorations,
          [nameof(SelectableLabel.TextTransform)] = MapTextTransform,
@@ -61,13 +60,14 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
 
     public static void MapTextColor(SelectableLabelHandler handler, SelectableLabel label)
     {
-        handler.PlatformView.Foreground = new SolidColorBrush(label.TextColor.ToWindowsColor());
+        handler.PlatformView.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(label.TextColor.ToWindowsColor());
     }
 
     public static void MapFontAttributes(SelectableLabelHandler handler, SelectableLabel label)
     {
-        var fontWeight = label.FontAttributes.HasFlag(FontAttributes.Bold) ? FontWeights.Bold : FontWeights.Normal;
-        var fontStyle = label.FontAttributes.HasFlag(FontAttributes.Italic) ? Microsoft.UI.Text.FontStyle.Italic : Microsoft.UI.Text.FontStyle.Normal;
+
+        var fontWeight = label.FontAttributes.HasFlag(FontAttributes.Bold) ? Microsoft.UI.Text.FontWeights.Bold : Microsoft.UI.Text.FontWeights.Normal;
+        var fontStyle = label.FontAttributes.HasFlag(FontAttributes.Italic) ? FontStyle.Italic : FontStyle.Normal;
 
         handler.PlatformView.FontWeight = fontWeight;
         handler.PlatformView.FontStyle = fontStyle;
@@ -87,11 +87,6 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
         {
             handler.PlatformView.FontFamily = new Microsoft.UI.Xaml.Media.FontFamily(label.FontFamily);
         }
-    }
-
-    public static void MapBackgroundColor(SelectableLabelHandler handler, SelectableLabel label)
-    {
-        handler.PlatformView.Background = new SolidColorBrush(label.BackgroundColor.ToWindowsColor());
     }
 
     public static void MapLineBreakMode(SelectableLabelHandler handler, SelectableLabel label)
@@ -116,20 +111,17 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
 
     public static void MapTextDecorations(SelectableLabelHandler handler, SelectableLabel label)
     {
-        var textDecorations = Microsoft.UI.Text.TextDecorations.None;
+        var textDecorations = TextDeco.None;
 
-        if (label.TextDecorations.HasFlag(TextDecorations.Underline))
-        {
-            textDecorations |= Microsoft.UI.Text.TextDecorations.Underline;
-        }
+        if (label.TextDecorations.HasFlag(TextDeco.Underline))
+            textDecorations |= TextDeco.Underline;
 
-        if (label.TextDecorations.HasFlag(TextDecorations.Strikethrough))
-        {
-            textDecorations |= Microsoft.UI.Text.TextDecorations.Strikethrough;
-        }
+        if (label.TextDecorations.HasFlag(TextDeco.Strikethrough))
+            textDecorations |= TextDeco.Strikethrough;
 
         handler.PlatformView.TextDecorations = textDecorations;
     }
+
 
     public static void MapTextTransform(SelectableLabelHandler handler, SelectableLabel label)
     {
@@ -210,11 +202,11 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
                 // Apply font attributes
                 if (span.FontAttributes.HasFlag(FontAttributes.Bold))
                 {
-                    run.FontWeight = FontWeights.Bold;
+                    run.FontWeight = Microsoft.UI.Text.FontWeights.Bold;
                 }
                 if (span.FontAttributes.HasFlag(FontAttributes.Italic))
                 {
-                    run.FontStyle = Microsoft.UI.Text.FontStyle.Italic;
+                    run.FontStyle = FontStyle.Italic;
                 }
 
                 // Apply font size
@@ -226,18 +218,19 @@ public class SelectableLabelHandler : ViewHandler<SelectableLabel, RichTextBlock
                 // Apply text color
                 if (span.TextColor != null)
                 {
-                    run.Foreground = new SolidColorBrush(span.TextColor.ToWindowsColor());
+                    run.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(span.TextColor.ToWindowsColor());
                 }
 
                 // Apply text decorations
-                var textDecorations = Microsoft.UI.Text.TextDecorations.None;
-                if (span.TextDecorations.HasFlag(TextDecorations.Underline))
+                var textDecorations = TextDeco.None;
+
+                if (span.TextDecorations.HasFlag(TextDeco.Underline))
                 {
-                    textDecorations |= Microsoft.UI.Text.TextDecorations.Underline;
+                    textDecorations |= TextDeco.Underline;
                 }
-                if (span.TextDecorations.HasFlag(TextDecorations.Strikethrough))
+                if (span.TextDecorations.HasFlag(TextDeco.Strikethrough))
                 {
-                    textDecorations |= Microsoft.UI.Text.TextDecorations.Strikethrough;
+                    textDecorations |= TextDeco.Strikethrough;
                 }
                 run.TextDecorations = textDecorations;
 
