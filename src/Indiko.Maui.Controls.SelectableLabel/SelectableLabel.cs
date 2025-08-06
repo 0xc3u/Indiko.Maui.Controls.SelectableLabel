@@ -48,7 +48,7 @@ public class SelectableLabel : View
         set => SetValue(FontFamilyProperty, value);
     }
 
-    public static readonly BindableProperty LineBreakModeProperty = BindableProperty.Create(nameof(LineBreakMode), typeof(LineBreakMode), typeof(SelectableLabel), LineBreakMode.TailTruncation);
+    public static readonly BindableProperty LineBreakModeProperty = BindableProperty.Create(nameof(LineBreakMode), typeof(LineBreakMode), typeof(SelectableLabel), LineBreakMode.WordWrap);
     public LineBreakMode LineBreakMode
     {
         get => (LineBreakMode)GetValue(LineBreakModeProperty);
