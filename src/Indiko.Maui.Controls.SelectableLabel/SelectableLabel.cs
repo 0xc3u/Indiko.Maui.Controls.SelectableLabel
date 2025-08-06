@@ -64,7 +64,7 @@ public class SelectableLabel : View
         set => SetValue(TextDecorationsProperty, value);
     }
 
-    public static readonly BindableProperty TextTransformProperty = BindableProperty.Create(nameof(TextDecorations), typeof(TextTransform), typeof(SelectableLabel), TextTransform.None);
+    public static readonly BindableProperty TextTransformProperty = BindableProperty.Create(nameof(TextTransform), typeof(TextTransform), typeof(SelectableLabel), TextTransform.None);
 
     public TextTransform TextTransform
     {
@@ -80,7 +80,7 @@ public class SelectableLabel : View
         set => SetValue(LineHeightProperty, value);
     }
 
-    public static readonly BindableProperty MaxLinesProperty = BindableProperty.Create(nameof(LineHeight), typeof(int), typeof(SelectableLabel), -1);
+    public static readonly BindableProperty MaxLinesProperty = BindableProperty.Create(nameof(MaxLines), typeof(int), typeof(SelectableLabel), -1);
     public int MaxLines
     {
         get => (int)GetValue(MaxLinesProperty);
